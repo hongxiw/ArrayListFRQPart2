@@ -1,13 +1,11 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class WordScrambleTest
-{
+public class WordScrambleTest {
     public static int passedTests = 0;
     public static int failedTests = 0;
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         System.out.println("--------- TEST scrambleWord (part a) ---------");
         String result1 = WordScramble.scrambleWord("TAN");
         testScramble(result1, "TNA", 1);
@@ -35,16 +33,12 @@ public class WordScrambleTest
         System.out.println("TOTAL FAILED TESTS: " + failedTests + " out of " + totalTests);
     }
 
-    public static void testScramble(String actual, String expected, int testNo)
-    {
+    public static void testScramble(String actual, String expected, int testNo) {
         System.out.print("TEST #" + testNo + " -- ");
-        if (actual.equals(expected))
-        {
+        if (actual.equals(expected)) {
             System.out.println("PASS!");
             passedTests++;
-        }
-        else
-        {
+        } else {
             System.out.println("*****FAIL*****");
             failedTests++;
         }
@@ -52,32 +46,23 @@ public class WordScrambleTest
         System.out.println("   Actual: " + actual);
     }
 
-    public static void testScrambleRemove(ArrayList<String> actual, ArrayList<String> expected, int testNo)
-    {
+    public static void testScrambleRemove(ArrayList<String> actual, ArrayList<String> expected, int testNo) {
         boolean equalLists = true;
-        if (actual.size() != expected.size())
-        {
+        if (actual.size() != expected.size()) {
             equalLists = false;
-        }
-        else
-        {
-            for (int i = 0; i < actual.size(); i++)
-            {
-                if (!actual.get(i).equals(expected.get(i)))
-                {
+        } else {
+            for (int i = 0; i < actual.size(); i++) {
+                if (!actual.get(i).equals(expected.get(i))) {
                     equalLists = false;
                 }
             }
         }
 
         System.out.print("TEST #" + testNo + " -- ");
-        if (equalLists)
-        {
+        if (equalLists) {
             System.out.println("PASS!");
             passedTests++;
-        }
-        else
-        {
+        } else {
             System.out.println("*****FAIL*****");
             failedTests++;
         }

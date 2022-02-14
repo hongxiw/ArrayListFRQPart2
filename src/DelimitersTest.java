@@ -1,16 +1,14 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class DelimitersTest
-{
+public class DelimitersTest {
     public static int passedTests = 0;
     public static int failedTests = 0;
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         System.out.println("--------- TEST getDelimitersList (part a) ---------");
         Delimiters delimitersEx1 = new Delimiters("(", ")");
-        String[] tokens1 = {"(", "x + y", ")", " * 5" };
+        String[] tokens1 = {"(", "x + y", ")", " * 5"};
         ArrayList<String> results1 = delimitersEx1.getDelimitersList(tokens1);
         ArrayList<String> expResults1 = new ArrayList<String>(Arrays.asList("(", ")"));
         testGetDelimitersList(results1, expResults1, 1);
@@ -49,32 +47,23 @@ public class DelimitersTest
         System.out.println("TOTAL FAILED TESTS: " + failedTests + " out of " + totalTests);
     }
 
-    public static void testGetDelimitersList(ArrayList<String> actual, ArrayList<String> expected, int testNo)
-    {
+    public static void testGetDelimitersList(ArrayList<String> actual, ArrayList<String> expected, int testNo) {
         boolean equalLists = true;
-        if (actual.size() != expected.size())
-        {
+        if (actual.size() != expected.size()) {
             equalLists = false;
-        }
-        else
-        {
-            for (int i = 0; i < actual.size(); i++)
-            {
-                if (!actual.get(i).equals(expected.get(i)))
-                {
+        } else {
+            for (int i = 0; i < actual.size(); i++) {
+                if (!actual.get(i).equals(expected.get(i))) {
                     equalLists = false;
                 }
             }
         }
 
         System.out.print("TEST #" + testNo + " -- ");
-        if (equalLists)
-        {
+        if (equalLists) {
             System.out.println("PASS!");
             passedTests++;
-        }
-        else
-        {
+        } else {
             System.out.println("*****FAIL*****");
             failedTests++;
         }
@@ -82,16 +71,12 @@ public class DelimitersTest
         System.out.println("   Actual: " + actual);
     }
 
-    public static void testIsBalanced(boolean actual, boolean expected, int testNo)
-    {
+    public static void testIsBalanced(boolean actual, boolean expected, int testNo) {
         System.out.print("TEST #" + testNo + " -- ");
-        if (actual == expected)
-        {
+        if (actual == expected) {
             System.out.println("PASS!");
             passedTests++;
-        }
-        else
-        {
+        } else {
             System.out.println("*****FAIL*****");
             failedTests++;
         }
